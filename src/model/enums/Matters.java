@@ -1,0 +1,16 @@
+package model.enums;
+
+public enum Matters {
+	
+	PORTUGUESE,
+	MATHEMATICS,
+	STORY,
+	GEOGRAPHY,
+	SCIENCE,
+	ARTS,
+	COMPUTING,
+	ENGLISH,
+	SPANISH,
+	PHYSICAL_EDUCATION,
+
+}
