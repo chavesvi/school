@@ -1,7 +1,7 @@
 package application;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import model.entities.Teacher;
 import model.enums.Matters;
@@ -13,19 +13,21 @@ public class Program {
 	public static void main(String[] args) {
 		
 		Matters mt = null;
-		List<Matters> listM = new ArrayList<>();
-		listM.add(mt.MATHEMATICS);
-		listM.add(mt.COMPUTING);
 		SchoolSeries ss = null;
-		List<SchoolSeries> listS = new ArrayList<>();
-		listS.add(ss.FIFTH_GRADE);
+		Map<SchoolSeries, Matters> map = new HashMap<>();
+		map.put(ss.FIFTH_GRADE, mt.ARTS);
+		map.put(ss.SEVENTH_GRADE, mt.ARTS);
 		
-		Teacher t = new Teacher("Gabriel", null, null, null, listM, listS);
+		Teacher t = new Teacher("Gabriel", null, null, null, map);
 		t.addMatter(mt.ENGLISH);
 		//t.addMatter(mt);
 		System.out.println(t);
 		t.removeMatter(mt.ENGLISH);
 		//t.removeMatter(mt.SCIENCE);
+		System.out.println(t);
+		t.addClass(ss.NINTH_GRADE, mt.SCIENCE);
+		System.out.println(t);
+		t.removeClass(ss.NINTH_GRADE);
 		System.out.println(t);
 	}
 
